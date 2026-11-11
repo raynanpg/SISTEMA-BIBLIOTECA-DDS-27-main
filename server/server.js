@@ -2,8 +2,11 @@
 const express = require("express")
 const app = express()
 
+// IMPORTAR O MÓDULO DO DOTENV, LÊ O ARQUIVO .ENV, E JÁ CONFIGURA O BANCO
+require('dotenv').config()
+
 // DEFINE A PORTA DO SERVIDOR 
-const port = 5000
+const port = process.env.PORT || 5000
 
 // CRIAÇÃO DAS ROTAS
 // ROTAS PÚBLICAS

@@ -4,7 +4,8 @@
   "description": "Sistema de biblioteca top",
   "main": "server.js",
   "scripts": {
-    "test": "server"
+    "test": "server",
+    "server": "nodemon ./server.js localhost 3000"
   },
   "keywords": [
     "livros",
