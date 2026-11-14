@@ -14,7 +14,7 @@ const pool = mysql.createPool(
         // QUANTIDADE MÁXIMA DE CONEXÕES AO MESMO TEMPO
         connectionLimit: 10,
         // MÁXIMO DE LISTA DE ESPERA
-        queueLimit: 0 // 0 = LIMITADO
+        queueLimit: 0 // 0 = ILIMITADO
     }
 )
 
