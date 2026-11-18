@@ -1,11 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body style="background-color: greenyellow;">
-    <h1 style="color: red;">to na pagina de cadastrar usuario kkkk</h1>
-</body>
-</html>
+<!-- IMPORTAÇÃO DO HEADER -->
+<%- include('../partials/header') %>
+
+<main class="container my-2 flex-grow-1 text-center">
+  <h1 class="fg-accent fs-6x1">ESTOU NA PÁGINA DE CADASTRO</h1>
+  <!-- CRIAR O FORMULÁRIO DE CADASTRO -->
+  <div class="d-flex flex-column">
+    <!-- ACTION - FALA A ROTA QUE O BOTÃO VAI ENVIAR AS INVORMAÇÕES -->
+    <form action="/usuarios/cadastrar" method="post">
+  </div>
+  <!-- CAIXINHA DE NOME -->
+  <div class="form-group">
+    <label for="nome"> Nome: </label>
+    <input type="text" name="nome" id="nome" required />
+  </div>
+  <!-- CAIXINHA DE EMAIL -->
+  <div class="form-group">
+    <label for="email"> Email: </label>
+    <input type="email" name="email" id="email" required />
+  </div>
+  <!-- CAIXINHA DE SENHA -->
+  <div class="form-group">
+    <label for="senha"> Senha: </label>
+    <input type="password" name="senha" id="senha" required />
+  </div>
+  <!-- CAIXINHA DE PERFIL -->
+  <div class="form-group">
+    <label for="perfil"> Perfil: </label>
+    <select name="perfil" id="perfil" class="form-control">
+      <option value="adm"> Administrador</option>
+      <option value="bibliotecaria">bibliotecaria</option>
+    </select>
+    <!-- BOTÃO DE ENVIO -->
+     <button type="submit" class="btn-subtle theme-success mt-3">Cadastrar</button>
+  </div>
+</form>
+</main>
+
+<!-- IMPORTAÇÃO DO FOOTER-->
+<%- include('../partials/footer') %>
