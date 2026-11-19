@@ -17,8 +17,12 @@ app.set("view engine", "ejs");
 // APONTAR PARA O EJS ONDE ESTÇAO AS PÁGINAS
 app.set("views", path.join(__dirname, "../client/views"));
 
-// CRIAÇÃO DAS ROTAS
+// MIDDLEWARE PARA ENTEDER O JSON
+// LÊ OS DADOS
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
 
+// CRIAÇÃO DAS ROTAS
 // IMPORTAR AS ROTAS DE USUÁRIO
 const usuarioRoutes = require("./routes/usuarioRoutes.js")
 app.use("/usuarios", usuarioRoutes)

@@ -13,9 +13,23 @@ module.exports = {
   },
   // CRUD
   // CREATE
-  criar: (req, res) => {
-    usuarioModels.criarUsuario();
-    res.send("Criei um usuário");
+  criar: async (req, res) => {
+    try {
+      // COLETA AS INFORMAÇÃOES DO BODY DA REQUISIÇÃO
+      const {nome, email, senha, perfil} = req.body
+
+      // PASSA AS INFORMAÇÕES PRO MODEL
+      await usuarioModels.criarUsuario(nome, email, senha, perfil)
+
+      // REDIRECIONA PARA A PÁGINA DE LISTA DE USUÁRIO
+      res.redirect("/usuarios/listar")
+    } 
+    catch (erro) {
+      // MOSTRA O ERRO NO TERMINAL
+      console.log(erro);
+      // RENDERIZA A PÁGINA DE ERRO, MSOTRANDO PRO USUÁRIO UMA MENSAGEM
+      res.render("erro",{erro, mensagem:"Erro ao criar o usuário"})
+    }
   },
   //READ
   listar: (req, res) => {
@@ -23,8 +37,8 @@ module.exports = {
     res.send("Mostrei a lista de usuários");
   },
   // UPDATE
-  atualiza: (req, res) => {
-    usuarioModels.atualizaUsuario();
+  atualizar: (req, res) => {
+    usuarioModels.atualizarUsuario();
     res.send("Atualizei um usuários");
   },
   // DELETE

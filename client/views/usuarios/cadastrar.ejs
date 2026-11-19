@@ -1,40 +1,64 @@
-<!-- IMPORTAÇÃO DO HEADER -->
+<!-- Importação do Header -->
 <%- include('../partials/header') %>
 
-<main class="container my-2 flex-grow-1 text-center">
-  <h1 class="fg-accent fs-6x1">ESTOU NA PÁGINA DE CADASTRO</h1>
-  <!-- CRIAR O FORMULÁRIO DE CADASTRO -->
-  <div class="d-flex flex-column">
-    <!-- ACTION - FALA A ROTA QUE O BOTÃO VAI ENVIAR AS INVORMAÇÕES -->
-    <form action="/usuarios/cadastrar" method="post">
-  </div>
-  <!-- CAIXINHA DE NOME -->
-  <div class="form-group">
-    <label for="nome"> Nome: </label>
-    <input type="text" name="nome" id="nome" required />
-  </div>
-  <!-- CAIXINHA DE EMAIL -->
-  <div class="form-group">
-    <label for="email"> Email: </label>
-    <input type="email" name="email" id="email" required />
-  </div>
-  <!-- CAIXINHA DE SENHA -->
-  <div class="form-group">
-    <label for="senha"> Senha: </label>
-    <input type="password" name="senha" id="senha" required />
-  </div>
-  <!-- CAIXINHA DE PERFIL -->
-  <div class="form-group">
-    <label for="perfil"> Perfil: </label>
-    <select name="perfil" id="perfil" class="form-control">
-      <option value="adm"> Administrador</option>
-      <option value="bibliotecaria">bibliotecaria</option>
-    </select>
-    <!-- BOTÃO DE ENVIO -->
-     <button type="submit" class="btn-subtle theme-success mt-3">Cadastrar</button>
-  </div>
-</form>
-</main>
+<main class="container my-2 flex-grow-1">
+  <h1 class="fg-accent fs-6x1">Estou na pagina de cadastro</h1>
 
-<!-- IMPORTAÇÃO DO FOOTER-->
+  <!-- Criar o formulário de cadastro -->
+  <div class="d-flex flex-column">
+    <!-- action - Fala a rota que o botão vai enviar as informações -->
+    <form action="/usuarios/cadastrar" method="post">
+      <!-- Caixinha de Nome -->
+      <div class="form-group">
+        <label for="nome"> Nome: </label>
+        <input
+          type="name"
+          name="nome"
+          id="nome"
+          required
+          class="form-control"
+        />
+      </div>
+
+      <!-- Caixinha de Email -->
+      <div class="form-group">
+        <label for="email"> Email: </label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          required
+          class="form-control"
+        />
+      </div>
+
+      <!-- Caixinha de Senha -->
+      <div class="form-group">
+        <label for="senha"> Senha: </label>
+        <input
+          type="password"
+          name="senha"
+          id="senha"
+          required
+          class="form-control"
+        />
+      </div>
+
+      <!-- Caixinha de Perfil -->
+      <div class="form-group">
+        <label for="perfil"> Nome: </label>
+        <select name="Perfil" id="perfil" class="form-control">
+          <option value="adm">Administrador</option>
+          <option value="bibliotecaria">Bibliotecaria</option>
+        </select>
+      </div>
+
+      <!-- Botão de envio -->
+      <button type="submit" class="btn-subtle theme-succes mt-3">
+        Cadastrar
+      </button>
+    </form>
+  </div>
+</main>
+<!-- Importação do Footer -->
 <%- include('../partials/footer') %>

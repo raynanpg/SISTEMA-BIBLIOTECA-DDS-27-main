@@ -13,9 +13,16 @@ router.get("/login", usuarioControllers.login);
 router.get("/cadastrar", (req, res) => {
   res.render("usuarios/cadastrar");
 });
+
+// MANDAR AS INFORMAÇÕES DE CADASTRO PARA CONTROLLER
+router.post("/cadastrar", usuarioControllers.criar)
+
+// MOSTRA A PÁGINA DE LISTAR USUÁRIO
 router.get("/listar", (req, res) => {
   res.render("usuarios/listar");
 });
+
+// MOSTRA A PÁGINA DE EDITAR USUÁRIO
 router.get("/editar", (req, res) => {
   res.render("usuarios/editar");
 });
